@@ -1,18 +1,18 @@
-{
-  'saghen/blink.cmp',
+return {
+  "saghen/blink.cmp",
   -- optional: provides snippets for the snippet source
-  dependencies = { 'rafamadriz/friendly-snippets' },
+  dependencies = { "rafamadriz/friendly-snippets" },
 
   -- use a release tag to download pre-built binaries
-  version = '1.*',
+  version = "1.*",
 
-  ---@module 'blink.cmp'
+  ---@module "blink.cmp"
   ---@type blink.cmp.Config
   opts = {
-    -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
-    -- 'super-tab' for mappings similar to vscode (tab to accept)
-    -- 'enter' for enter to accept
-    -- 'none' for no mappings
+    -- "default" (recommended) for mappings similar to built-in completions (C-y to accept)
+    -- "super-tab" for mappings similar to vscode (tab to accept)
+    -- "enter" for enter to accept
+    -- "none" for no mappings
     --
     -- All presets have the following mappings:
     -- C-space: Open menu or open docs if already open
@@ -21,12 +21,12 @@
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = { preset = "default" },
 
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+      -- "mono" (default) for "Nerd Font Mono" or "normal" for "Nerd Font"
       -- Adjusts spacing to ensure icons are aligned
-      nerd_font_variant = 'mono'
+      nerd_font_variant = "mono"
     },
 
     -- (Default) Only show the documentation popup when manually triggered
@@ -35,7 +35,7 @@
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { "lsp", "path", "snippets", "buffer" },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
