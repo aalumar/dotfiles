@@ -6,6 +6,11 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>tt", ":lua require('base46').toggle_transparency()<CR>", { noremap = true, silent = true, desc = "Toggle background transparency" })
 map("n", "<leader>dw", ":lua vim.diagnostic.open_float()", { noremap = true, silent = true, desc = "Show diagnostic floating window" })
 
+-- lsp formatting
+map("n", "<leader>=", function()
+  vim.lsp.buf.format({ async = false })
+end, { desc = "Format code with LSP" })
+
 -- debugger
 map("n", "<leader>dt", function()
   require("dap").toggle_breakpoint()
