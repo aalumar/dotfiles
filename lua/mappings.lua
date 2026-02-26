@@ -52,3 +52,6 @@ end, { desc = "DAP List Breakpoints" })
 map("n", "<leader>de", function()
   require("dap").set_exception_breakpoints({ "all" })
 end, { desc = "DAP Set Exception Breakpoints" })
+
+-- Redo mapping
+map("n", "U", "<C-r>", { noremap = true })
