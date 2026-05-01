@@ -1,57 +1,58 @@
-require "nvchad.mappings"
+-- This just loads the standard NvChad mappings
+require("nvchad.mappings")
 
 local map = vim.keymap.set
 
+-- : instead of ;
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("n", "<leader>tt", ":lua require('base46').toggle_transparency()<CR>", { noremap = true, silent = true, desc = "Toggle background transparency" })
-map("n", "<leader>dw", ":lua vim.diagnostic.open_float()", { noremap = true, silent = true, desc = "Show diagnostic floating window" })
 
--- lsp formatting
+-- Toggle transparency
+map("n", "<leader>tt", function()
+  require("base46").toggle_transparency()
+end, { desc = "Toggle transparency" })
+
+-- Open floating diagnostic window
+map("n", "<leader>dw", function()
+  vim.diagnostic.open_float()
+end, { desc = "Show diagnostic" })
+
+-- LSP formatting
 map("n", "<leader>=", function()
   vim.lsp.buf.format({ async = false })
 end, { desc = "Format code with LSP" })
 
--- debugger
+-- Redo
+map("n", "U", "<C-r>", { desc = "Redo" })
+
+-- DAP (debugger)
 map("n", "<leader>dt", function()
   require("dap").toggle_breakpoint()
-end, { desc = "DAP Toggle Breakpoint" })
-
+end, { desc = "Toggle Breakpoint" })
 map("n", "<leader>dc", function()
   require("dap").continue()
-end, { desc = "DAP Continue" })
-
+end, { desc = "Continue" })
 map("n", "<leader>di", function()
   require("dap").step_into()
-end, { desc = "DAP Step Into" })
-
+end, { desc = "Step Into" })
 map("n", "<leader>do", function()
   require("dap").step_over()
-end, { desc = "DAP Step Over" })
-
-map("n", "<leader>du", function()
+end, { desc = "Step Over" })
+map("n", "<leader>dO", function()
   require("dap").step_out()
-end, { desc = "DAP Step Out" })
-
+end, { desc = "Step Out" })
 map("n", "<leader>dr", function()
   require("dap").repl.open()
-end, { desc = "DAP Open REPL" })
-
+end, { desc = "Open REPL" })
 map("n", "<leader>dl", function()
   require("dap").run_last()
-end, { desc = "DAP Run Last" })
-
+end, { desc = "Run Last" })
 map("n", "<leader>dq", function()
   require("dap").terminate()
   require("dapui").close()
-end, { desc = "DAP Terminate" })
-
-map("n", "<leader>db", function()
+end, { desc = "Terminate" })
+map("n", "<leader>dB", function()
   require("dap").list_breakpoints()
-end, { desc = "DAP List Breakpoints" })
-
+end, { desc = "List Breakpoints" })
 map("n", "<leader>de", function()
   require("dap").set_exception_breakpoints({ "all" })
-end, { desc = "DAP Set Exception Breakpoints" })
-
--- Redo mapping
-map("n", "U", "<C-r>", { noremap = true })
+end, { desc = "Exception Breakpoints" })

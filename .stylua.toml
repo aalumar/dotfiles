@@ -1,6 +1,7 @@
+# Configuration file for Stylua (Lua code formatter) 
 column_width = 120
 line_endings = "Unix"
 indent_type = "Spaces"
 indent_width = 2
 quote_style = "AutoPreferDouble"
-call_parentheses = "None"
+call_parentheses = "Always" # Always add paranthesis to single-argument function calls (NvChad style uses 'require "options"' instead of 'require("options")' which is ugly)
