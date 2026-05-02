@@ -1,15 +1,9 @@
 return {
+  -- Lazy load all plugins
   defaults = { lazy = true },
-  install = { colorscheme = { "nvchad" } },
-
-  ui = {
-    icons = {
-      ft = "",
-      lazy = "󰂠 ",
-      loaded = "",
-      not_loaded = "",
-    },
-  },
+  -- This isn't the theme of Neovim, it's a fallback color during plugin installation
+  -- For the theme, see chadrc.lua
+  install = { colorscheme = { "everforest" } },
 
   performance = {
     rtp = {
@@ -35,12 +29,10 @@ return {
         "zipPlugin",
         "tutor",
         "rplugin",
-        "syntax",
         "synmenu",
         "optwin",
         "compiler",
         "bugreport",
-        "ftplugin",
       },
     },
   },

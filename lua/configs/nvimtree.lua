@@ -1,4 +1,5 @@
-local options = {
+-- nvimtree is the file explorer for Neovim.
+return {
   view = {
     side = "right",
   },
@@ -9,9 +10,4 @@ local options = {
       },
     },
   },
-  filters = {
-    dotfiles = false, -- show dotfiles
-  },
 }
-
-return options

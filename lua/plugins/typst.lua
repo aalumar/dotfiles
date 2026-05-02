@@ -1,8 +1,5 @@
 return {
-  {
-  'chomosuke/typst-preview.nvim',
-  lazy = false,  -- or lazy by filetype 'typst'
-  version = '1.*',
-  opts = {},
-  }
+  "chomosuke/typst-preview.nvim",
+  ft = { "typst" },
+  version = "1.*",
 }
