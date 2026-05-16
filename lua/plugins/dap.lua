@@ -6,7 +6,6 @@ return {
     "nvim-neotest/nvim-nio",
     "theHamsta/nvim-dap-virtual-text",
   },
-  keys = { "<leader>dt", "<leader>dc" },
   config = function()
     require("configs.dapconfig")
   end,
