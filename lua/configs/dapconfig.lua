@@ -57,3 +57,27 @@ dap.configurations.python = {
     program = "${file}",
   },
 }
+
+-- C/C++ DAP CONFIG --
+-- Unlike Python where you can just launch ${file} directly, C++ requires a compiled binary, so the config prompts you for the executable path at debug time. You'd compile first (e.g. g++ -g main.cpp -o main), then point DAP at the output binary.
+dap.adapters.codelldb = {
+  type = "server",
+  port = "${port}",
+  executable = {
+    command = vim.fn.stdpath("data") .. "/mason/packages/codelldb/extension/adapter/codelldb",
+    args = { "--port", "${port}" },
+  },
+}
+
+dap.configurations.cpp = {
+  {
+    type = "codelldb",
+    request = "launch",
+    name = "Launch file",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+  },
+}
