@@ -13,7 +13,7 @@ M.nvdash = {
 
 M.ui = {
   tabufline = {
-    order = { "buffers", "tabs", "btns" },
+    order = { "buffers", "tabs" },
   },
 }
 
